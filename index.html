@@ -14,11 +14,31 @@
 			<form>
 				<fieldset>
 					<legend>Distance</legend>
-						<input type="number" name="distance" autofocus required>
+						<input type="number" name="distance" min="0" autofocus required>
+						<select name="distance_unit">
+							<option value="km">Km</option>
+							<option value="m">m</option>
+						</select>
 				</fieldset>
 				<fieldset>
 					<legend>Time</legend>
-				</fieldset>				
+					hours : <input type="number" name="hour" min="0" step="1">
+					minutes : <input type="number" name="minute" min="0" max="59" step="1" maxlength="2">
+					seconds : <input type="number" name="second" min="0" max="59" step="1" maxlength="2">
+				</fieldset>
+				<fieldset>
+					<legend>Checkpoints</legend>
+					Get a checkpoint every <input type="number" name="checkpoint" min="0" step="1">
+					<select name="checkpoint_unit">
+						<option value="km">kilometer(s)</option>
+						<option value="m">meter(s)</option>
+						<option value="hour">hour(s)</option>
+						<option value="min">minute(s)</option>
+						<option value="second">second(s)</option>
+					</select>
+					<button> Add a checkpoint </button>
+				</fieldset>
+				<input type="submit" value="Get my checkpoints">
 			</form>
 		</section>
 		<footer>
