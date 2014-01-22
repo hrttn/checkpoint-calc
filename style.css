@@ -1,0 +1,15 @@
+#user_input{
+	background-color:#E86731;
+	color:white;
+	margin:auto;
+	text-align:center;
+}
+
+form{
+	display:inline-block;
+	text-align:left;
+	}
+	
+	form p{
+		padding-bottom: 3em;
+	}
