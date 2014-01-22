@@ -7,40 +7,34 @@
 		<link rel="stylesheet" href="style.css" />
 		<title>Checkpoint calculator</title>
 	</head>
-  
 	<body>
-		<header>
-		</header>
-		<section>
+		<section id="user_input">
 			<form>
-				<fieldset>
-				<input type="number" name="distance" placeholder="distance" min="0" autofocus required>
-				<select name="distance_unit">
-					<option value="km">Km</option>
-					<option value="m">m</option>
-				</select>
-				</fieldset>
-				<fieldset>
-				<input type="number" name="hour" placeholder="hour(s)" min="0" step="1">
-				<input type="number" name="minute" placeholder="minute(s)" min="0" max="59" step="1" maxlength="2">
-				<input type="number" name="second" placeholder="second(s)" min="0" max="59" step="1" maxlength="2">
-				</fieldset>
-				<fieldset>
-				Checkpoints <input type="number" name="checkpoint" placeholder="every" min="0" step="1">
-			<select name="checkpoint_unit">
-				<option value="km">kilometer(s)</option>
-				<option value="m">meter(s)</option>
-				<option value="hour" >hour(s)</option>
-				<option value="min" >minute(s)</option>
-				<option value="second" >second(s)</option>
-			</select>
-			<button> Add a checkpoint </button>
-			</fieldset>
-			<input type="submit" value="Get my checkpoints">
+				<p>
+					<input type="number" name="distance" placeholder="distance" min="0" autofocus required>
+					<select name="distance_unit">
+						<option value="km">Km</option>
+						<option value="m">m</option>
+					</select>
+				</p>
+				<p>
+					<input type="number" name="hour" placeholder="hour(s)" min="0" step="1">
+					<input type="number" name="minute" placeholder="minute(s)" min="0" max="59" step="1" maxlength="2">
+					<input type="number" name="second" placeholder="second(s)" min="0" max="59" step="1" maxlength="2">
+				</p>
+				<p>
+					<input type="number" name="checkpoint" placeholder="every" min="0" step="1">
+					<select name="checkpoint_unit">
+						<option value="km">kilometer(s)</option>
+						<option value="m">meter(s)</option>
+						<option value="hour" >hour(s)</option>
+						<option value="min" >minute(s)</option>
+						<option value="second" >second(s)</option>
+					</select>
+					<button> Add a checkpoint </button>
+				</p>
+				<input type="submit" value="Get my checkpoints">
 			</form>
 		</section>
-		<footer>
-		</footer>
 	</body>
-
 </html>
