@@ -13,12 +13,26 @@ h2{
 	font-style:italic;
 }
 
-#user_input{
+#area_1{
 	background-color:#E86731;
-	color:white;
-	margin:auto;
+	
 	text-align:center;
 	min-height: 100%;
+}
+
+#user_input{
+	background-color:rgb(255,255,255);
+	background-color:rgba(255,255,255,0.92);
+	color:#E86731;
+	width:50%;
+	margin:auto;
+	padding:2%;
+	-webkit-border-bottom-left-radius:15px;
+	-webkit-border-bottom-right-radius:15px;	
+	-moz-border-bottom-left-radius:15px;
+	-moz-border-bottom-right-radius:15px;	
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
 }
 
 form{
@@ -29,6 +43,7 @@ form{
 	
 	form p{
 		padding-bottom: 3em;
+		
 	}
 
 	input, button{
