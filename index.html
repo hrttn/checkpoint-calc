@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="script.js"></script>
 		<title>Checkpoint calculator - See what your checkpoints should be</title>
 	</head>
 	<body>
@@ -12,7 +13,7 @@
 			<section id="user_input">
 				<h1>Calculate your checkpoints!</h1>
 				<h2>Enter your goals:</h2>
-				<form>
+				<form id="form_1" method="post" action="">
 					<p>
 						<input type="number" name="distance" placeholder="Distance" min="0" autofocus required>
 						<select name="distance_unit">
@@ -21,9 +22,9 @@
 						</select>
 					</p>
 					<p>
-						<input type="number" name="hour" placeholder="Hour(s)" min="0" step="1">
-						<input type="number" name="minute" placeholder="Minute(s)" min="0" max="59" step="1" maxlength="2">
-						<input type="number" name="second" placeholder="Second(s)" min="0" max="59" step="1" maxlength="2">
+						<input type="number" name="time_hour" placeholder="Hour(s)" min="0" step="1">
+						<input type="number" name="time_minute" placeholder="Minute(s)" min="0" max="59" step="1" maxlength="2">
+						<input type="number" name="time_second" placeholder="Second(s)" min="0" max="59" step="1" maxlength="2">
 					</p>
 					<p>
 						<input type="number" name="checkpoint" placeholder="Checkpoints every" min="0" step="1" required>
@@ -31,17 +32,23 @@
 							<option value="km">kilometer(s)</option>
 							<option value="m">meter(s)</option>
 							<option value="hour" >hour(s)</option>
-							<option value="min" >minute(s)</option>
+							<option value="minute" >minute(s)</option>
 							<option value="second" >second(s)</option>
 						</select>
-						<button class="add_button"> Add checkpoints </button>
+						<input type="button" class="add_button" name="add_button" value="Add checkpoints">
 					</p>
-					<input type="submit" id="submit" value="Get my checkpoints">
+					<input type="button" id="submit" name="submit" value="Get my checkpoints" onclick="calcCheckpoints()">
 				</form>
 			</section>
 		</div>
 		<section id="results">
-		<p> Results </p>
+			<table id="table_of_results">
+				<thead id="table_head">
+					<tr>
+						<td>#</td><td>Distance</td><td>Time</td>
+					</tr>
+				</thead>
+			</table>
 		</section>
 	</body>
 </html>

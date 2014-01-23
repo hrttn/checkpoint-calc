@@ -23,7 +23,7 @@ h2{
 #user_input{
 	background-color:rgb(255,255,255);
 	background-color:rgba(255,255,255,0.92);
-	color:#E86731;
+	color:black;
 	width:50%;
 	margin:auto;
 	padding:2%;
@@ -120,5 +120,4 @@ form{
 	}#submit:active {
 		position:relative;
 		top:1px;
-	}
 	}
