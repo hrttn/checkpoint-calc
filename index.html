@@ -35,13 +35,16 @@
 							<option value="minute" >minute(s)</option>
 							<option value="second" >second(s)</option>
 						</select>
-						<input type="button" class="add_button" name="add_button" value="Add checkpoints">
+						<a href="#">add checkpoints</a>
 					</p>
-					<input type="button" id="submit" name="submit" value="Get my checkpoints" onclick="calcCheckpoints()">
+					<input type="button" id="submit" name="submit" value="Get my checkpoints" onclick="calcCheckpoints(); location.href='#checkpoints_display';">
 				</form>
 			</section>
 		</div>
 		<section id="results">
+			<h2 id="checkpoints_display">Your checkpoints</h2>
+				<div id="results_div">
+				</div>
 		</section>
 	</body>
 </html>
