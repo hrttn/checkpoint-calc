@@ -31,7 +31,7 @@ function calcCheckpoints(){
 		tbody.rows[i].insertCell(0);
 		tbody.rows[i].cells[0].appendChild(document.createTextNode(i + 1));
 		tbody.rows[i].insertCell(1);
-		tbody.rows[i].cells[1].appendChild(document.createTextNode((values[0]) + " " + values[1]));
+		tbody.rows[i].cells[1].appendChild(document.createTextNode(convertInto(values[0] , "m", values[1]) + " " + values[1]));
 		tbody.rows[i].insertCell(2);
 		tbody.rows[i].cells[2].appendChild(document.createTextNode(formatSeconds(values[2])));
 	}
@@ -52,9 +52,8 @@ function getValues(){
 	var TimeInSeconds = hoursInSeconds + minutesInSeconds + secondsInSeconds;
 	
 	var stepsUnit = form.elements['checkpoint_unit'].value;
-	if(isItADistance(stepsUnit)){
-		var stepsInSmallestUnit = convertInto(form.elements['checkpoint'].value, stepsUnit, 'm');
-	}
+	var stepsInSmallestUnit = convertInto(form.elements['checkpoint'].value, stepsUnit, 'm');
+	
 	var numberOfCheckpoints = Math.floor(distanceInMeters / stepsInSmallestUnit);
 	var allTheValues = new Array(distanceInMeters, distanceUnit, TimeInSeconds, stepsInSmallestUnit, stepsUnit, numberOfCheckpoints);
 	return allTheValues ;
@@ -72,14 +71,6 @@ function formatSeconds(totalSeconds){
 	minutes = (minutes < 10) ? "0" + minutes + ":" :  minutes + ":";
 	seconds =(seconds < 10) ? "0" + seconds : seconds;
 	return hours + minutes + seconds;
-}
-
-function isItADistance(unit){
-	if (unit =="km" || unit == "m"){
-		return true;
-	} else {
-	return false;
-	}
 }
 
 function convertInto(distance, fromUnit, toUnit){
