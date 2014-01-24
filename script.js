@@ -1,13 +1,22 @@
 function calcCheckpoints(){
-	var submitButton = document.getElementById("submit");
-	submitButton.disabled = true;
+	var resultsSection = document.getElementById("results");
 	var values = getValues();
-	var table = document.getElementById("table_of_results");
-	
-
-	var tbody = document.createElement("tbody");
-	tbody.name = "tbody";
-	table.appendChild(tbody);
+	var docum
+	var table = document.createElement("table");
+	table.id="tableOfResults";
+	if (!isInPage(table)){
+		var thead = document.createElement("thead");
+		thead.insertRow(0);
+		thead.rows[0].insertCell(0);
+		thead.rows[0].cells[0].appendChild(document.createTextNode("#"));
+		thead.rows[0].insertCell(1);
+		thead.rows[0].cells[1].appendChild(document.createTextNode("Distance"));
+		thead.rows[0].insertCell(2);
+		thead.rows[0].cells[2].appendChild(document.createTextNode("Time"));
+		table.appendChild(thead);
+		
+		var tbody = document.createElement("tbody");
+		table.appendChild(tbody);
 
 	for(var i = 0; i < values[5]; i++){
 		tbody.insertRow(i);
@@ -16,11 +25,13 @@ function calcCheckpoints(){
 		tbody.rows[i].insertCell(1);
 		tbody.rows[i].cells[1].appendChild(document.createTextNode(values[3] * (i+1)));
 		tbody.rows[i].insertCell(2);
-		tbody.rows[i].cells[2].appendChild(document.createTextNode("Cell 2,2"));
+		tbody.rows[i].cells[2].appendChild(document.createTextNode(values[2]%3600));
+		}
+	resultsSection.removeChild(resultsSection.firstChild);
+	resultsSection.appendChild(table);
 	}
-	//add the table to the document body
 	
-	}
+}
 	
 function getValues(){
 	var form = document.getElementById("form_1");
@@ -37,3 +48,12 @@ function getValues(){
 	return allTheValues ;
 }
 
+function isInPage(element) {
+	while (element = element.parentNode) {
+        if (element == document) {
+            return true;
+        }
+    }
+    return false;
+}
+    
