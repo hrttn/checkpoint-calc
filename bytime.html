@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="script_time.js"></script>
+		<title>Checkpoint calculator - See what your checkpoints should be</title>
+	</head>
+	<body>
+		<div id="area_1">
+			<section id="user_input">
+				<h1>Calculate your checkpoints!</h1>
+				<h2>Enter your goals:</h2>
+				<form id="form_1" method="post" action="">
+					<p>
+						<input type="number" name="distance" placeholder="Distance" min="0" autofocus required>
+						<select name="distance_unit">
+							<option value="km">Km</option>
+							<option value="m">m</option>
+						</select>
+					</p>
+					<p>
+						<input type="number" name="time_hour" placeholder="Hour(s)" min="0" step="1">
+						<input type="number" name="time_minute" placeholder="Minute(s)" min="0" max="59" step="1" maxlength="2">
+						<input type="number" name="time_second" placeholder="Second(s)" min="0" max="59" step="1" maxlength="2">
+					</p>
+					<p>
+						<input type="number" name="checkpoint"  placeholder="Checkpoints every" min="0" step="1" required>
+						<select name="checkpoint_unit" >
+							<option value="hour">hour(s)</option>
+							<option value="minute">minute(s)</option>
+							<option value="second">second(s)</option>
+						</select>
+					</p>
+					<input type="button" id="submit" name="submit" value="Get my checkpoints" onclick="calcCheckpoints(); location.href='#checkpoints_display';">
+				</form>
+			</section>
+		</div>
+		<section id="results">
+			<h2 id="checkpoints_display">Your checkpoints</h2>
+				<div id="results_div">
+				</div>
+		</section>
+	</body>
+</html>
