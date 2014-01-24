@@ -121,3 +121,23 @@ form{
 		position:relative;
 		top:1px;
 	}
+
+#results{
+		padding-top:20px;
+		}
+	
+	#table_of_results{
+		width:50%;
+		margin:auto;
+		
+	}
+	#table_of_results tbody{
+		text-align:right;
+		}
+		
+		#table_of_results td{
+				padding: 1em;
+				border: solid black 1px;
+			}
+	
+	

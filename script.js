@@ -3,8 +3,9 @@ function calcCheckpoints(){
 	var values = getValues();
 	var docum
 	var table = document.createElement("table");
-	table.id="tableOfResults";
-	if (!isInPage(table)){
+	table.id="table_of_results";
+	
+
 		var thead = document.createElement("thead");
 		thead.insertRow(0);
 		thead.rows[0].insertCell(0);
@@ -29,7 +30,7 @@ function calcCheckpoints(){
 		}
 	resultsSection.removeChild(resultsSection.firstChild);
 	resultsSection.appendChild(table);
-	}
+	
 	
 }
 	
@@ -46,14 +47,5 @@ function getValues(){
 	var numberOfCheckpoints = Math.floor(distance / steps);
 	var allTheValues = new Array(distance, distanceUnit, TimeInSeconds, steps, stepsUnit, numberOfCheckpoints);
 	return allTheValues ;
-}
-
-function isInPage(element) {
-	while (element = element.parentNode) {
-        if (element == document) {
-            return true;
-        }
-    }
-    return false;
 }
     
